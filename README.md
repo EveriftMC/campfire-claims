@@ -1,12 +1,15 @@
 ![Banner](branding/banner.svg)
 
-# Bell Claims
+# ~~Bell~~ Campfire Claims
 
-Bell Claims is an intuitive and comprehensive land-claiming Spigot/PaperMC plugin for Minecraft multiplayer servers. It allows players to claim
+~~Bell~~ Campfire Claims is an intuitive and comprehensive land-claiming Spigot/PaperMC plugin for Minecraft multiplayer servers. It allows players to claim
 an area for their bases and control who is allowed to interact with them in order to prevent griefing.
 
+> [!NOTE]
+> This plugin is a fork of bell-claims, with the only difference that it uses campfires instead of bells.
+
 Here are some of the cool features you can expect:
-- **Physically Grounded** - Claims are marked using Bells, yes the block. Manage your claim from here, or break it to destroy your whole claim. 
+- **Physically Grounded** - Claims are marked using ~~Bells~~ Campfires, yes the block. Manage your claim from here, or break it to destroy your whole claim. 
 - **Intuitive GUI Menus** - Your entire claim can be managed using click menus. Never need to type a command ever again.
 - **Flexible Border Creation** - Claim borders aren't limited to just squares. Expand your claim whichever way you want without expending claim area limits.
 - **Efficient & Informative Visualisations** - Never have trouble finding the borders of your own claim, as well as the claims of others.
@@ -71,9 +74,9 @@ Here are the different limits you can set:
 
 ### Compiling
 ```
-git clone https://gitlab.com/Mizarc/bellclaims.git
-cd BellClaims/
-./gradlew shadowJar
+git clone https://gitlab.com/EveriftMC/campfire-claims.git
+cd campfire-claims
+./gradlew build
 ```
 Built .jar binary can be found in the `build/libs` folder.
 
@@ -81,4 +84,4 @@ Built .jar binary can be found in the `build/libs` folder.
 If you encounter any bugs, crashes, or unexpected behaviour, please [open an issue](https://github.com/mizarc/bell-claims/issues) in this repository.
 
 ## License
-Bell Claims is licensed under the permissive MIT license. Please view [LICENSE](LICENSE) for more info.
+~~Bell~~ Campfire Claims is licensed under the permissive MIT license. Please view [LICENSE](LICENSE) for more info.
