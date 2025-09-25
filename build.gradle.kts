@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.0.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    kotlin("jvm") version "2.2.20"
+    id("com.gradleup.shadow") version "9.2.1"
 }
 
 group = "dev.mizarc"
@@ -31,14 +31,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-    testImplementation("io.mockk:mockk:1.13.11")
-    testImplementation("io.papermc.paper:paper-api:1.21.5-R0.1-SNAPSHOT")
-    testImplementation("com.github.MilkBowl:VaultAPI:1.7")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     compileOnly("io.papermc.paper:paper-api:1.21.5-R0.1-SNAPSHOT")
     shadow("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation ("org.slf4j:slf4j-nop:2.0.13")
+    implementation("org.slf4j:slf4j-nop:2.0.13")
     implementation("com.zaxxer:HikariCP:5.1.0")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
     implementation("co.aikar:idb-core:1.0.0-SNAPSHOT")
@@ -53,12 +48,20 @@ dependencies {
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+tasks {
+    build {
+        dependsOn(shadowJar)
+    }
 
-tasks.shadowJar {
-    archiveClassifier = null
+    jar {
+        archiveClassifier = "noshade"
+    }
+
+    shadowJar {
+        archiveClassifier = null
+    }
 }
