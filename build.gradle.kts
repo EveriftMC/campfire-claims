@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "2.2.20"
     id("com.gradleup.shadow") version "9.2.1"
+    id("xyz.jpenilla.run-paper") version "3.0.0-beta.1"
 }
 
 group = "dev.mizarc"
@@ -53,6 +54,11 @@ java {
 }
 
 tasks {
+    runServer {
+        minecraftVersion("1.21.8")
+        jvmArgs("-Xmx2G", "-Xms2G", "-Dcom.mojang.eula.agree=true")
+    }
+
     build {
         dependsOn(shadowJar)
     }

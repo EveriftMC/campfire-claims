@@ -5,6 +5,7 @@
 # Gradle folders
 .gradle/
 build/
+run/
 
 # Kotlin
 .kotlin
