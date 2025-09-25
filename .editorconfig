@@ -1119,8 +1119,8 @@ ij_visual_guides =
 ij_jspx_keep_indents_on_empty_lines = false
 
 [{*.kt,*.kts}]
-indent_size = 2
-tab_width = 2
+indent_size = 4
+tab_width = 4
 ij_continuation_indent_size = 4
 ij_visual_guides = 
 ij_kotlin_align_in_columns_case_branch = false
