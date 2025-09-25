@@ -1,5 +1,6 @@
 package dev.mizarc.bellclaims.interaction.listeners
 
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.transfer.DoesPlayerHaveTransferRequest
 import dev.mizarc.bellclaims.application.actions.claim.anchor.GetClaimAnchorAtPosition
 import dev.mizarc.bellclaims.application.actions.player.DoesPlayerHaveClaimOverride
@@ -38,7 +39,7 @@ class ClaimAnchorListener(): Listener, KoinComponent {
         if (event.action != Action.RIGHT_CLICK_BLOCK) return
         if (!event.player.isSneaking) return
         val clickedBlock = event.clickedBlock ?: return
-        if ((clickedBlock.type) != Material.BELL) return
+        if ((clickedBlock.type) != BellClaims.RELEVANT_MATERIAL) return
         if (!event.player.hasPermission("bellclaims.action.bell")) return
 
         // Get the claim if it exists at the clicked location

@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.management
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.AnvilGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.transfer.AcceptTransferRequest
 import dev.mizarc.bellclaims.application.actions.player.IsPlayerInClaimMenu
 import dev.mizarc.bellclaims.application.results.claim.transfer.AcceptTransferRequestResult
@@ -43,7 +44,7 @@ class ClaimTransferNamingMenu(private val menuNavigator: MenuNavigator, private 
 
         // Add lodestone menu item
         val firstPane = StaticPane(0, 0, 1, 1)
-        val lodestoneItem = ItemStack(Material.BELL)
+        val lodestoneItem = ItemStack(BellClaims.RELEVANT_MATERIAL)
             .name(name)
             .lore("${claim.position.x}, ${claim.position.y}, ${claim.position.z}")
         val guiItem = GuiItem(lodestoneItem) { guiEvent -> guiEvent.isCancelled = true }

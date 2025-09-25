@@ -2,4 +2,6 @@ name: BellClaims
 version: 0.4.0
 api-version: '1.21'
 main: dev.mizarc.bellclaims.BellClaims
-softdepend: [Vault]
+# softdepend my ass, it is very much required lol
+# softdepend: [Vault]
+depend: [Vault]

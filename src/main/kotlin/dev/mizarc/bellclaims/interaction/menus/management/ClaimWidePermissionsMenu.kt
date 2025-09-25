@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.management
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.permission.GetClaimPermissions
 import dev.mizarc.bellclaims.application.actions.claim.permission.GrantAllClaimWidePermissions
 import dev.mizarc.bellclaims.application.actions.claim.permission.GrantClaimWidePermission
@@ -54,7 +55,7 @@ class ClaimWidePermissionsMenu(private val menuNavigator: MenuNavigator, private
             open()
         }
 
-        addSelector(playerId, controlsPane, ItemStack(Material.BELL)
+        addSelector(playerId, controlsPane, ItemStack(BellClaims.RELEVANT_MATERIAL)
             .name(localizationProvider.get(playerId, LocalizationKeys.MENU_CLAIM_WIDE_PERMISSIONS_ITEM_INFO_NAME)),
             deselectAction, selectAction)
 

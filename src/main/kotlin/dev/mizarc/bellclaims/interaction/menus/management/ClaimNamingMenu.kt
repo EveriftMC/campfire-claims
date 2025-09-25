@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.management
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.AnvilGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.CreateClaim
 import dev.mizarc.bellclaims.application.results.claim.CreateClaimResult
 import dev.mizarc.bellclaims.application.utilities.LocalizationProvider
@@ -47,7 +48,7 @@ class ClaimNamingMenu(private val player: Player, private val menuNavigator: Men
 
         // Add bell menu item
         val firstPane = StaticPane(0, 0, 1, 1)
-        val bellItem = ItemStack(Material.BELL)
+        val bellItem = ItemStack(BellClaims.RELEVANT_MATERIAL)
             .name("")
             .lore("${location.blockX}, ${location.blockY}, ${location.blockZ}")
         val guiItem = GuiItem(bellItem) { guiEvent -> guiEvent.isCancelled = true }

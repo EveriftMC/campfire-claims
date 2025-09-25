@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.management
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.permission.GetClaimPlayerPermissions
 import dev.mizarc.bellclaims.application.actions.claim.permission.GrantAllPlayerClaimPermissions
 import dev.mizarc.bellclaims.application.actions.claim.permission.GrantPlayerClaimPermission
@@ -223,7 +224,7 @@ class ClaimPlayerPermissionsMenu(private val menuNavigator: MenuNavigator, priva
             }
             when (canPlayerReceiveTransferRequest.execute(claim.id, targetPlayer.uniqueId)) {
                 CanPlayerReceiveTransferRequestResult.Success -> {
-                    val transferClaimItem = ItemStack(Material.BELL)
+                    val transferClaimItem = ItemStack(BellClaims.RELEVANT_MATERIAL)
                         .name(localizationProvider.get(
                             playerId, LocalizationKeys.MENU_PLAYER_PERMISSIONS_ITEM_TRANSFER_NAME))
                         .lore(localizationProvider.get(

@@ -11,6 +11,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import net.milkbowl.vault.chat.Chat
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitScheduler
 import org.koin.core.context.GlobalContext.startKoin
@@ -24,6 +25,10 @@ import java.sql.SQLException
  * The entry point for the Bell Claims plugin.
  */
 class BellClaims : JavaPlugin() {
+    companion object {
+        val RELEVANT_MATERIAL = Material.CAMPFIRE
+    }
+
     private lateinit var commandManager: PaperCommandManager
     lateinit var metadata: Chat
     private lateinit var scheduler: BukkitScheduler

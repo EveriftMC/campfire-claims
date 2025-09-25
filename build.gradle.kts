@@ -38,7 +38,7 @@ dependencies {
     implementation("com.zaxxer:HikariCP:5.1.0")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
     implementation("co.aikar:idb-core:1.0.0-SNAPSHOT")
-    implementation("com.github.stefvanschie.inventoryframework:IF:0.11.1")
+    implementation("com.github.stefvanschie.inventoryframework:IF:0.11.3")
     implementation("io.insert-koin:koin-core:4.0.2")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7") {
         exclude(group = "org.bukkit", module = "bukkit")
@@ -57,6 +57,9 @@ tasks {
     runServer {
         minecraftVersion("1.21.8")
         jvmArgs("-Xmx2G", "-Xms2G", "-Dcom.mojang.eula.agree=true")
+        downloadPlugins {
+            url("https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar")
+        }
     }
 
     build {

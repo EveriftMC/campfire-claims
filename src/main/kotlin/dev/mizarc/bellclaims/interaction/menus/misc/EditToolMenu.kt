@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.misc
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.metadata.GetClaimBlockCount
 import dev.mizarc.bellclaims.application.actions.claim.metadata.GetClaimDetails
 import dev.mizarc.bellclaims.application.actions.claim.partition.CanRemovePartition
@@ -141,7 +142,7 @@ class EditToolMenu(private val menuNavigator: MenuNavigator, private val player:
         // Add a claim information item
         val partitions = getClaimPartitions.execute(claim.id)
         val blockCount = getClaimBlockCount.execute(claim.id)
-        val claimItem = ItemStack(Material.BELL)
+        val claimItem = ItemStack(BellClaims.RELEVANT_MATERIAL)
             .name(localizationProvider.get(
                 player.uniqueId, LocalizationKeys.MENU_EDIT_TOOL_ITEM_CLAIM_NAME))
             .lore(localizationProvider.get(

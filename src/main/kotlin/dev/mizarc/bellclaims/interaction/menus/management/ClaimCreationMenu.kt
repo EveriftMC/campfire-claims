@@ -3,6 +3,7 @@ package dev.mizarc.bellclaims.interaction.menus.management
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.actions.claim.IsNewClaimLocationValid
 import dev.mizarc.bellclaims.application.actions.claim.ListPlayerClaims
 import dev.mizarc.bellclaims.application.results.claim.IsNewClaimLocationValidResult
@@ -54,7 +55,7 @@ class ClaimCreationMenu(private val player: Player, private val menuNavigator: M
         // Change the button depending on whether the player is able to create the claim or not
         when (isNewClaimLocationValid.execute(location.toPosition2D(), location.world.uid)) {
             IsNewClaimLocationValidResult.Valid -> {
-                val iconEditorItem = ItemStack(Material.BELL)
+                val iconEditorItem = ItemStack(BellClaims.RELEVANT_MATERIAL)
                     .name(localizationProvider.get(playerId, LocalizationKeys.MENU_CREATION_ITEM_CREATE_NAME))
                     .lore(localizationProvider.get(playerId, LocalizationKeys.MENU_CREATION_ITEM_CREATE_LORE_PROTECTED))
                     .lore(localizationProvider.get(playerId, LocalizationKeys.MENU_CREATION_ITEM_CREATE_LORE_REMAINING,

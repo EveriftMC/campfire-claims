@@ -1,5 +1,6 @@
 package dev.mizarc.bellclaims.infrastructure.services
 
+import dev.mizarc.bellclaims.BellClaims
 import dev.mizarc.bellclaims.application.errors.PlayerNotFoundException
 import dev.mizarc.bellclaims.application.services.ConfigService
 import dev.mizarc.bellclaims.application.services.ToolItemService
@@ -39,7 +40,7 @@ class ToolItemServiceBukkit(private val localizationProvider: LocalizationProvid
 
     override fun giveMoveTool(playerId: UUID, claim: Claim): Boolean {
         // Create the claim tool with special metadata
-        val tool = ItemStack(Material.BELL)
+        val tool = ItemStack(BellClaims.RELEVANT_MATERIAL)
             .name(localizationProvider.get(playerId, LocalizationKeys.ITEM_MOVE_TOOL_NAME, claim.name))
             .lore(localizationProvider.get(playerId, LocalizationKeys.ITEM_MOVE_TOOL_LORE))
         val itemMeta = tool.itemMeta
